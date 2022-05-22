@@ -1,11 +1,18 @@
-import { ButtonProps } from './Button.props';
+import { ButtonProps } from "./Button.props";
 
-import styles from './Button.module.scss';
+import classnames from "classnames";
+
+import styles from "./Button.module.scss";
 
 export const Button = (props: ButtonProps) => {
-    return (
-        <button className={props.color + styles.button} >
-            {props.text}
-        </button>
-    )
-}
+  return (
+    <button
+      className={classnames(styles.button, {
+        [styles.danger]: props.color === "red",
+        [styles.primary]: props.color === "blue",
+      })}
+    >
+      {props.text}
+    </button>
+  );
+};
