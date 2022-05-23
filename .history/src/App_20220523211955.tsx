@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { Route, Routes,Link } from "react-router-dom";
 
 import { Button } from "./components";
 import { Card } from "./components/card/Card";

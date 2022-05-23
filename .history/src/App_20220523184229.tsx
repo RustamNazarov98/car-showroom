@@ -1,27 +1,19 @@
 import React from "react";
 import "./App.css";
-import { Route, Routes,Link } from "react-router-dom";
 
 import { Button } from "./components";
 import { Card } from "./components/card/Card";
+import { Footer_nav } from "./components/footer_nav/Footer_nav";
 import { Input } from "./components/input/Input";
 import {Navigation} from "./components/navigation/Navigation";
-import { SocialMedia } from "./components/social_media/SocialMedia";
-import Twitter from './icons/Twitter.svg';
-import LinkedIn from './icons/LinkedIn.svg';
-import {Title} from './components/Title/Title';
 
 function App() {
-
   return (
     <div className="App">
       <Button text="Регистрация" color={"red"} />
       <Navigation text="Поиск" active={true}  />
       <Input text="не понял как изменять текст внутри инпута"/>
       <Card text="Nissan X-Trail"/>
-      <SocialMedia img={Twitter} />
-      <SocialMedia img={LinkedIn} />
-      <Title text="НАЙТИ И СРАВНИТЬ ВЫГОДНЫЕ ПРЕДЛОЖЕНИЯ НА НАШЕМ САЙТЕ"/>
     </div>
   );
 }
