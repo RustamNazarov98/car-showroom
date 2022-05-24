@@ -1,3 +1,8 @@
 export interface CardProps {
-    text:string;
-}
+    name:string;
+    description:string;
+    color:string;
+    price:number;
+    phone:number;
+    engineCapacity:number;
+};
