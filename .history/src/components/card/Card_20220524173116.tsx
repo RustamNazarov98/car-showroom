@@ -5,7 +5,7 @@ import Car from '../../img/card_picture.svg';
 export const Card = (props:CardProps) => {
     return(
         <div>
-            <img className={styles.car} src={Car} />
+            <img src={Car} />
             <p className={styles.p}>{props.name}</p>
             <p>{props.description}</p>
             <p>{props.color}</p>
