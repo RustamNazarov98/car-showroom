@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
-import {BrowserRouter, Route, Routes } from "react-router-dom";
+import "./Global.css"
+import {BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import {HomePage} from './pages/HomePage';
 import { About } from "./pages/About";
+import { Card } from "./components";  
 
 
 function App() {

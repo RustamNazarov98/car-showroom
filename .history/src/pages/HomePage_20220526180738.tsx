@@ -5,6 +5,7 @@ import { Input } from '../components/input/Input';
 import { Navigation } from '../components/navigation/Navigation';
 import { PageTitle } from '../components/PageTitle/PageTitle';
 import { SocialMedia } from '../components/social_media/SocialMedia';
+import { InputSelect } from '../components/InputSelect/InputSelect';
 import LinkedIn from '../icons/LinkedIn.svg';
 import Twitter from '../icons/Twitter.svg';
 import { useState } from 'react';

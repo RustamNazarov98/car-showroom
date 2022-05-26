@@ -5,4 +5,5 @@ export interface CardProps {
     price:number;
     phone:number;
     engineCapacity:number;
+    year:number;
 };

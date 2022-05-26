@@ -11,6 +11,8 @@ export const Button = (props: ButtonProps) => {
         [styles.danger]: props.color === "red",
         [styles.primary]: props.color === "blue",
       })}
+
+      onClick={props.onClick}
     >
       {props.text}
     </button>
