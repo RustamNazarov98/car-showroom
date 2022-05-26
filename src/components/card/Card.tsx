@@ -7,6 +7,7 @@ export const Card = (props:CardProps) => {
         <div>
             <img className={styles.car} src={Car} />
             <p className={styles.p}>{props.name}</p>
+            <p>{props.year}</p>
             <p>{props.description}</p>
             <p>{props.color}</p>
             <p>{props.price}</p>
