@@ -1,6 +1,0 @@
-export { Button } from './button/Button'
-export {Card} from './card/Card'
-export {Input} from './input/Input'
-export {Navigation} from './navigation/Navigation'
-export {SocialMedia} from './social_media/SocialMedia'
-export {PageTitle} from './PageTitle/PageTitle'
