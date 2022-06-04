@@ -1,0 +1,31 @@
+.hot_list{
+  padding: 100px 0 150px;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  .title_text{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    color: $white;
+  }
+  .title_text::after {
+    content: url('../../assets/images/small_arrow.svg');
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  a{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    color: $white;
+    padding-right: 20px;
+    position: relative;
+  }
+}

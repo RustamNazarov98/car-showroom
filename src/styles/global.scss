@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: $baseColor;
+  text-transform: uppercase;
+}
+
+.container{
+  width: 1100px;
+  margin: 0 auto 0 300px;
+}
+
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input{
+  outline: none;
+  :focus {
+    outline: 0;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+
+img,h1,h2,h3,h4,h5{
+  margin: 0;
+  padding: 0;
+}

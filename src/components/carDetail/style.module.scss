@@ -1,0 +1,17 @@
+.car_detail{
+  padding: 135px 0;
+  min-height: 100vh;
+}
+.car_detail_inner{
+  display: flex;
+  justify-content: space-between;
+}
+.car_info{
+  background: red;
+  width: 35%;
+  margin-left: 10px;
+}
+.car_slider{
+  background: blue;
+  width: 65%;
+}

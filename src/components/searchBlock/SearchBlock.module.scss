@@ -1,0 +1,36 @@
+.search_block{
+  width: 100%;
+  min-height: 750px;
+  background-image: url("../../assets/images/main_pic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: linear-gradient(180deg, rgba(0, 0, 0, 0) -7.67%, #000000 100%);
+  z-index: -1;
+  padding: 156px 0 120px;
+}
+.search_block_inner{
+
+}
+.form{
+  margin-top: 120px;
+  max-width: 555px;
+  select,input{
+    padding: 15px 14px;
+  }
+  .inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    input{
+      width: 48%;
+      margin-top: 20px;
+    }
+  }
+  button{
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 40px;
+  }
+}
+

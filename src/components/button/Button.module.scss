@@ -1,11 +1,15 @@
 .button {
   color: #fff;
-
+  border: none;
   &.danger {
-    color: red;
+    color: $danger;
   }
 
   &.primary {
-    color: blue;
+    color: $blue;
+  }
+
+  &.primary {
+    color: $transparent;
   }
 }
