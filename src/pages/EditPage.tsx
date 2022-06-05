@@ -1,15 +1,14 @@
 import React from 'react';
 import {Footer, Header, Navbar} from "../components";
 
-const NoMatch = () => {
+const EditPage = () => {
     return (
         <>
             <Header/>
             <Navbar/>
-            <h1>404</h1>
+            <h1>Edit</h1>
             <Footer/>
         </>
     );
-};
-
-export default NoMatch;
+}
+export default EditPage

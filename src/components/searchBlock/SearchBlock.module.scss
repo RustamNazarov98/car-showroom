@@ -1,10 +1,10 @@
 .search_block{
   width: 100%;
   min-height: 750px;
-  background-image: url("../../assets/images/main_pic.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: linear-gradient(180deg, rgba(0, 0, 0, 0) -7.67%, #000000 100%);
+  background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0) -7.67%, #000000 100%),
+          url("../../assets/images/main_pic.png") center center no-repeat;
   z-index: -1;
   padding: 156px 0 120px;
 }

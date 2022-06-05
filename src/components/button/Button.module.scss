@@ -2,14 +2,14 @@
   color: #fff;
   border: none;
   &.danger {
-    color: $danger;
+    background-color: $danger;
   }
 
   &.primary {
-    color: $blue;
+    background-color: $blue;
   }
 
-  &.primary {
-    color: $transparent;
+  &.transparent {
+    background-color: $transparent;
   }
 }

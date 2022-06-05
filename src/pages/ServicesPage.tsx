@@ -1,11 +1,12 @@
 import React from 'react';
-import {Footer, Header} from "../components";
+import {Footer, Header, Navbar, PageInner} from "../components";
 
 const ServicesPage = () => {
     return (
         <>
             <Header/>
-            <h1>Services</h1>
+            <Navbar/>
+            <PageInner pageTitle={'Услуги'}/>
             <Footer/>
         </>
     );

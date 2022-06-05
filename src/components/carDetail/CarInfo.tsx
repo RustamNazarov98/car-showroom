@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './style.module.scss';
+import CarIcon from '../../assets/images/car-icon.svg';
 
 const CarInfo = () => {
     const {
@@ -14,8 +15,53 @@ const CarInfo = () => {
         option_icon,
         option_text,
         car_info_phone,
-        car_info_description
+        car_info_description,
+        icon_wrapper
     } = styles
+
+    const dataParams = [
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        },
+        {
+            icon: CarIcon,
+            title: 'Тип кузова',
+            data: 'Внедорожник',
+        }
+    ]
+
     return (
         <div className={car_info}>
             <div className={car_info_title}>
@@ -25,85 +71,27 @@ const CarInfo = () => {
             </div>
             <p className={car_info_price}>48,000 <span>AED</span></p>
             <div className={car_info_options}>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
+                {dataParams.map((item,index) => (
+                    <div className={option} key={index}>
+                        <div className={option_icon}>
+                            <div className={icon_wrapper}>
+                                <img src={item.icon} alt="icon"/>
+
+                            </div>
+                        </div>
+                        <div className={option_text}>
+                            <span>{item.title}</span>
+                            <p>{item.data}</p>
+                        </div>
                     </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
-                <div className={option}>
-                    <div className={option_icon}>
-                        icon
-                    </div>
-                    <div className={option_text}>
-                        <span>Тип кузова</span>
-                        <p>Внедорожник</p>
-                    </div>
-                </div>
+                ))}
             </div>
             <div className={car_info_phone}>
                 <p>Номер телефона</p>
                 <a href="tel:+ 996 505 505 505">+996 505 505 505</a>
             </div>
             <div className={car_info_description}>
-                <p>Описание</p>
+                <span>Описание</span>
                 <p>Краткая информация о таваре описания состояния маши может быть какие либо предмопочтения</p>
             </div>
         </div>

@@ -12,7 +12,7 @@ const Navbar = () => {
     const linksArray = [
         {
             text: 'Поиск',
-            link: '/search',
+            link: '/',
             active: true,
         },
         {
@@ -28,6 +28,11 @@ const Navbar = () => {
         {
             text: 'Услуги',
             link: '/services',
+            active: false,
+        },
+        {
+            text: 'Мои публикации',
+            link: '/publication/my',
             active: false,
         }
     ]

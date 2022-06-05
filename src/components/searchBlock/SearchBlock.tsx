@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SearchBlock.module.scss';
-import {PageTitle} from "../PageTitle/PageTitle";
+import {PageTitle} from "../pageTitle/PageTitle";
 import SearchBlockForm from "./SearchBlockForm";
 
 const SearchBlock = () => {

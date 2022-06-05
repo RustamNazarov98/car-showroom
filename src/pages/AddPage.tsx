@@ -1,15 +1,14 @@
 import React from 'react';
-import {Footer, Header, Navbar} from "../components";
+import {AddForm, Footer, Header, Navbar} from "../components";
 
-const NoMatch = () => {
+const AddPage = () => {
     return (
         <>
             <Header/>
             <Navbar/>
-            <h1>404</h1>
+            <AddForm/>
             <Footer/>
         </>
     );
-};
-
-export default NoMatch;
+}
+export default AddPage

@@ -1,11 +1,12 @@
 import React from 'react';
-import {Footer, Header} from "../components";
+import {Footer, Header, Navbar, PageInner} from "../components";
 
 const SparePartsPage = () => {
     return (
         <>
             <Header/>
-            <h1>spare parts</h1>
+            <Navbar/>
+            <PageInner pageTitle={'Запчасти'}/>
             <Footer/>
         </>
     );

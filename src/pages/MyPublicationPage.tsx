@@ -1,15 +1,15 @@
 import React from 'react';
 import {Footer, Header, Navbar, PageInner} from "../components";
 
-const SearchPage = () => {
+const CarsPage = () => {
     return (
         <>
             <Header/>
             <Navbar/>
-            <PageInner pageTitle={'Результаты поиска:'}/>
+            <PageInner pageTitle={'Мои Публикации:'}/>
             <Footer/>
         </>
     );
 };
 
-export default SearchPage;
+export default CarsPage;
