@@ -1,12 +1,13 @@
 import React from 'react';
 import {Footer, Header, Navbar, PageInner} from "../components";
+import {cars} from "../fakeData";
 
 const CarsPage = () => {
     return (
         <>
             <Header/>
             <Navbar/>
-            <PageInner pageTitle={'Автомобили:'}/>
+            <PageInner pageTitle={'Автомобили:'} items={cars}/>
             <Footer/>
         </>
     );

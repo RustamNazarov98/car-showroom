@@ -3,6 +3,7 @@ import Select from "../select";
 import styles from './SearchBlock.module.scss';
 import {Input} from "../input/Input";
 import {Button} from "../index";
+import {useNavigate} from "react-router-dom";
 
 const SearchBlockForm = () => {
     const {
@@ -10,16 +11,22 @@ const SearchBlockForm = () => {
         inputs
     } = styles
 
+    const navigate = useNavigate();
+
     const selectOptions = [
         {value: 'BMV'},
         {value: 'Mersedes-Benz'},
         {value: 'Toyota'},
     ]
 
+    const handleClick = () => {
+        navigate("/search");
+    }
+
     return (
         <form className={form}>
             <Select
-                name={'search-form'}
+                name={'cars'}
                 options={selectOptions}
                 placeholder={'Все Марки'}
             />
@@ -32,33 +39,33 @@ const SearchBlockForm = () => {
                 <Input
                     value={''}
                     onChange={() => console.log('hello')}
-                    placeholder={'год от'}
+                    placeholder={'год до'}
                 />
                 <Input
                     value={''}
                     onChange={() => console.log('hello')}
-                    placeholder={'год от'}
+                    placeholder={'цена от'}
                 />
                 <Input
                     value={''}
                     onChange={() => console.log('hello')}
-                    placeholder={'год от'}
+                    placeholder={'цена до'}
                 />
                 <Input
                     value={''}
                     onChange={() => console.log('hello')}
-                    placeholder={'год от'}
+                    placeholder={'км от'}
                 />
                 <Input
                     value={''}
                     onChange={() => console.log('hello')}
-                    placeholder={'год от'}
+                    placeholder={'км до'}
                 />
             </div>
             <Button
                 color={'blue'}
                 text={'Показать'}
-                onClick={() => console.log('Показать')}
+                onClick={handleClick}
             />
         </form>
     );

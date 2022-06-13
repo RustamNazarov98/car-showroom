@@ -9,14 +9,13 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-
-    ::placeholder{
-        color: $white;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 19px;
-        opacity: 1;
-    }
+}
+.textarea::placeholder{
+    color: $white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    opacity: 1;
 }
 

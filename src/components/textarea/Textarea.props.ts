@@ -1,7 +1,8 @@
 export interface TextareaProps {
-    value: string;
+    value: string | number;
     rows: number,
     cols: number,
-    onChange: (value: string) => void;
+    onChange: (key: string, value: string | number) => void;
     placeholder: string;
+    objKey: string;
 }

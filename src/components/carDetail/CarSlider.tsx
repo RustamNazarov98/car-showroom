@@ -14,22 +14,22 @@ const CarSlider = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
     const images = [
         {
-            image: 'https://swiperjs.com/demos/images/nature-1.jpg'
+            image: 'https://avatars.mds.yandex.net/get-autoru-vos/5966122/dbb37d32be68a4162bed88a509712c1d/456x342n'
         },
         {
-            image: 'https://swiperjs.com/demos/images/nature-2.jpg'
+            image: 'https://www.domkrat.by/upload/img_catalog/x-trail/nissan_x-trail_33.jpg'
         },
         {
-            image: 'https://swiperjs.com/demos/images/nature-3.jpg'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTejN7zi155v-9sxpZJFzSOhqW_C43M3aRw6sVP-QcDqdB3NQRNJfODHxnwaIMr1-DAbzo&usqp=CAU'
         },
         {
-            image: 'https://swiperjs.com/demos/images/nature-4.jpg'
+            image: 'https://okami-motors.ru/wp-content/uploads/2021/09/NISSAN-X-TRAIL.jpg'
         },
         {
-            image: 'https://swiperjs.com/demos/images/nature-5.jpg'
+            image: 'https://mashintop.ru/images_cache/car_photo_big/uploads/attachments/car_photo/2015-03-19/449915585/originals/big_8751426784752.jpg'
         },
         {
-            image: 'https://swiperjs.com/demos/images/nature-6.jpg'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAxREV5jVPZlGNOKsIqg4FIhjWSE24XqZJoQXCd6Xxl4vX-sq_SWacg9-aoIiF_Mbd_1I&usqp=CAU'
         },
 
 

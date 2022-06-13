@@ -9,3 +9,7 @@ export interface Item{
     preview: string,
     code: string,
 }
+
+export interface ListProps {
+    items: Item[]
+}
