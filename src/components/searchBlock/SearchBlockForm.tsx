@@ -20,7 +20,7 @@ const SearchBlockForm = () => {
     ]
 
     const handleClick = () => {
-        navigate("/search", { replace: true });
+        navigate("/search");
     }
 
     return (
