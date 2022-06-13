@@ -1,5 +1,7 @@
 export interface InputProps{
-    value: string;
-    onChange: (value: string) => void;
-    placeholder: string;
+    value: string | number;
+    onChange: (key: string, value: string | number) => void;
+    placeholder?: string;
+    objKey?: string;
+    type?: string;
 }

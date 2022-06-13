@@ -4,9 +4,10 @@ import {CarsList, PageTitle} from "../index";
 
 export interface Props{
     pageTitle: string;
+    items: any[]
 }
 
-const PageInner = ({pageTitle}: Props) => {
+const PageInner = ({pageTitle, items}: Props) => {
     const {
         page_inner,
         title
@@ -17,7 +18,7 @@ const PageInner = ({pageTitle}: Props) => {
                 <div className={title}>
                     <PageTitle text={pageTitle}/>
                 </div>
-                <CarsList/>
+                <CarsList items={items}/>
             </div>
         </section>
     );

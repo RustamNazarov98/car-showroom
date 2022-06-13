@@ -1,7 +1,7 @@
 import {TextareaProps} from './Textarea.props';
 import styles from './Textarea.module.scss';
 
-const Textarea = ({value,placeholder,onChange,cols,rows }:TextareaProps) => {
+const Textarea = ({value,placeholder,onChange,cols,rows,objKey }:TextareaProps) => {
     return(
         <textarea
             className={styles.textarea}
@@ -10,7 +10,7 @@ const Textarea = ({value,placeholder,onChange,cols,rows }:TextareaProps) => {
             rows={rows}
             cols={cols}
             placeholder={placeholder}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={e => onChange(typeof objKey === "string" ? objKey : '', e.target.value)}
         />
     );
 }

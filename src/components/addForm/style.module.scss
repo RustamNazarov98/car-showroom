@@ -1,9 +1,18 @@
 .inner{
   padding: 130px 0;
 }
+
 .form{
   margin-top: 40px;
+  button{
+    padding: 22px 90px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+  }
 }
+
 .input_wrapper{
   max-width: 554px;
   margin-bottom: 20px;
@@ -18,7 +27,28 @@
     padding: 15px;
     width: 270px;
   }
+  select{
+    padding: 15px;
+    width: 270px;
+  }
   textarea{
     padding: 6px 14px;
   }
+  img{
+    width: 270px;
+    height: auto;
+    object-fit: contain;
+  }
+  input[type=file] {
+    display: none;
+  }
+}
+
+.cars_input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 554px;
+  margin-top: 20px;
 }

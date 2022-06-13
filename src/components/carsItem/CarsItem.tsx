@@ -1,6 +1,6 @@
-import {CardItemProps} from './CardItem.props';
 import styles from './CardItem.module.scss';
 import {Link} from "react-router-dom";
+import {Item} from "./CardItem.props";
 
 const CarsItem = ({
                       title,
@@ -12,8 +12,7 @@ const CarsItem = ({
                       production,
                       preview,
                       code
-                  }:CardItemProps) => {
-
+                  }:Item) => {
     const {
         cars_item,
         image_wrapper,

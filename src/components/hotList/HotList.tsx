@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './HotList.module.scss';
 import {Link} from "react-router-dom";
 import {CarsList} from "../index";
+import {cars} from "../../fakeData";
 
 const HotList = () => {
     const {
@@ -18,7 +19,7 @@ const HotList = () => {
                         Посмотреть все
                     </Link>
                 </div>
-                <CarsList/>
+                <CarsList items={cars}/>
             </div>
         </section>
     );
