@@ -1,10 +1,13 @@
 export interface Option{
-    value: string,
+    id?: number,
+    name: string,
 }
 
 export interface SelectProps {
     name: string,
     form?: string,
     placeholder: string,
-    options: Option[]
+    options: Option[],
+    onChange?: (key: string, value: string | number) => void;
+    objKey?: string,
 }

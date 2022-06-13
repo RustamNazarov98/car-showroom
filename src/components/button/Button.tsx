@@ -11,8 +11,15 @@ const Button = ({color, text, onClick}: ButtonProps) => {
       [styles.primary]: color === "blue",
   })
 
+  const handleClick = (e: any) => {
+      e.stopPropagation()
+      e.preventDefault()
+      onClick()
+  }
+
+
   return (
-    <button className={btnClass} onClick={onClick}>
+    <button className={btnClass} onClick={handleClick}>
       {text}
     </button>
   );

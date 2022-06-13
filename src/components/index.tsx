@@ -15,6 +15,7 @@ export  {default as Footer} from './footer';
 export  {default as SocialMedia} from './social_media';
 export  {default as PageInner} from './pageInner';
 export  {default as AddForm} from './addForm';
+export  {default as Login} from './modals/login';
 export {default as TextArea} from './textarea/Textarea';
 export  {CarDetail} from './carDetail';
 

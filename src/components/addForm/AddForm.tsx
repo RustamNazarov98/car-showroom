@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './style.module.scss';
 import {PageTitle} from "../pageTitle/PageTitle";
 import {Input} from "../input/Input";
@@ -14,9 +14,28 @@ import {
     ruleOptions,
     transmissionOptions
 } from "./optionValues";
+import {useDispatch} from "react-redux";
+import {useActions} from "../../hooks/useActions";
+import {UseTypedSelector} from "../../hooks/useTypedSelector";
+import { getBase64 } from '../../services/getBase64';
+import {ICar} from "../../models/ICar";
 
+export interface AddFormProps {
+    reqObj: ICar;
+    setReqObj: any;
+    handleClick: () => void;
+    title: string;
+}
+const AddForm = ({reqObj,setReqObj, handleClick, title}: AddFormProps) => {
+    const {fetchAddCar,fetchGetCarModel,fetchGetCarBody} = useActions();
+    const {models, error, loading} = UseTypedSelector(state => state.carModels);
+    const {body} = UseTypedSelector(state => state.carBody);
 
-const AddForm = () => {
+    useEffect(() => {
+        fetchGetCarModel()
+        fetchGetCarBody()
+    },[])
+
     const {
         inner,
         form,
@@ -26,41 +45,29 @@ const AddForm = () => {
         input_file
     } = styles
 
-    const [reqObj, setReqObj] = useState({
-        price: '',
-        image: null,
-        name: '',
-        cylinder: null,
-        fuel: null,
-        transmission: '',
-        description: '',
-        model: null,
-        body: null,
-        volume: '',
-        mileage: '',
-        doors: '',
-        phone_number: '',
-        img: null,
-    });
 
     const handleChangeObj = (key:string, value: string | number) => {
-        setReqObj(old => ({...old, [key]: value}))
+        setReqObj((old: any) => ({...old, [key]: value}))
     };
 
     const handleChangeFile = (files: any) => {
         const file = files[0];
-        setReqObj(old => ({...old, img: file}))
+        getBase64(file).then(
+            data => setReqObj((old: any) => ({...old, image: data}))
+        );
+
     }
+
 
     return (
         <section className={inner}>
             <div className="container">
-                <PageTitle text={'Разместить обьявление:'}/>
+                <PageTitle text={title}/>
                 <form action="#" className={form}>
                     <div className={input_wrapper}>
                         {
-                            reqObj.img ?
-                                <img src={URL.createObjectURL(reqObj.img)} alt="image"/>
+                            reqObj.image ?
+                                <img src={reqObj.image} alt="image"/>
                                 :
                                 <>
                                     <input type="file" className={input_file} name="file" id="file" onChange={e => handleChangeFile(e.target.files)}/>
@@ -81,11 +88,11 @@ const AddForm = () => {
                     <div className={cars_input}>
                         <div className={input_wrapper}>
                             <p className={label}>Тип Кузова</p>
-                            <Select name={'model'} placeholder={'Выберите тип кузова'} options={bodyOptions}/>
+                            <Select name={'body'} placeholder={'Выберите тип кузова'} options={body} onChange={handleChangeObj}/>
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Цвет</p>
-                            <Select name={'model'} placeholder={'Выберите цвет'} options={colorOptions}/>
+                            <Select name={'color'} placeholder={'Выберите цвет'} options={colorOptions} onChange={handleChangeObj}/>
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Обьем двигателя</p>
@@ -93,15 +100,15 @@ const AddForm = () => {
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Топливо</p>
-                            <Select name={'model'} placeholder={'Топливо'} options={fuelOptions}/>
+                            <Select name={'fuel'} placeholder={'Топливо'} options={fuelOptions} onChange={handleChangeObj}/>
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Цилиндр</p>
-                            <Select name={'model'} placeholder={'Цилиндр'} options={cylinderOptions}/>
+                            <Select name={'cylinder'} placeholder={'Цилиндр'} options={cylinderOptions} onChange={handleChangeObj}/>
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Коробка передач</p>
-                            <Select name={'model'} placeholder={'Коробка передач'} options={transmissionOptions}/>
+                            <Select name={'transmission'} placeholder={'Коробка передач'} options={transmissionOptions} onChange={handleChangeObj}/>
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Пробег</p>
@@ -113,13 +120,13 @@ const AddForm = () => {
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Руль</p>
-                            <Select name={'model'} placeholder={'Руль'} options={ruleOptions}/>
+                            <Select name={'wheel'} placeholder={'Руль'} options={ruleOptions} onChange={handleChangeObj}/>
                         </div>
                     </div>
                     <div className={cars_input}>
                         <div className={input_wrapper}>
                             <p className={label}>Город</p>
-                            <Select name={'model'} placeholder={'Руль'} options={citiesOptions}/>
+                            <Select name={'city'} placeholder={'Руль'} options={citiesOptions} onChange={handleChangeObj}/>
                         </div>
                         <div className={input_wrapper}>
                             <p className={label}>Цена</p>
@@ -130,7 +137,7 @@ const AddForm = () => {
                             <Input value={reqObj.phone_number} onChange={handleChangeObj} placeholder={'Напишите ваш номер'} objKey={'phone_number'}/>
                         </div>
                     </div>
-                    <Button color={'blue'} text={'Разместить'} onClick={() => alert('Разместить')}/>
+                    <Button color={'blue'} text={'Разместить'} onClick={handleClick}/>
                 </form>
             </div>
         </section>
