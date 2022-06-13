@@ -2,7 +2,6 @@ import {InputProps} from './Input.props';
 import styles from './Input.module.scss';
 
 export const Input = ({value,placeholder,onChange,objKey,type='text' }:InputProps) => {
-    console.log(typeof objKey, 'keey')
     return(
         <input
             className={styles.input}
@@ -12,5 +11,4 @@ export const Input = ({value,placeholder,onChange,objKey,type='text' }:InputProp
             onChange={e => onChange(typeof objKey === "string" ? objKey : '', e.target.value)}
         />
     );
-
 }

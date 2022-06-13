@@ -1,6 +1,8 @@
-import React, {lazy, Suspense} from 'react'
+import React, {lazy, Suspense, useEffect} from 'react'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import '../src/styles/global.scss';
+import {Login} from "./components";
+import {useActions} from "./hooks/useActions";
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const CarsPage = lazy(() => import('./pages/CarsPage'));
@@ -15,6 +17,13 @@ const MyPublicationPage = lazy(() => import('./pages/MyPublicationPage'));
 const NoMatch = lazy(() => import('./pages/NoMatch'));
 
 function App() {
+    const {loginUser} = useActions();
+    const phone = localStorage.getItem('phone_number');
+
+    useEffect(() => {
+        if(phone){loginUser(phone)}
+    },[])
+
   return (
       <Router>
           <Suspense fallback={<p> Loading...</p>}>
@@ -28,10 +37,11 @@ function App() {
                   <Route path='/spare-parts' element={<SparePartsPage />} />
                   <Route path='/services' element={<ServicesPage />} />
                   <Route path='/publication/add' element={<AddPage />} />
-                  <Route path='/publication/edit' element={<EditPage />} />
+                  <Route path='/publication/edit/:id' element={<EditPage />} />
                   <Route path='/publication/my' element={<MyPublicationPage />} />
                   <Route path="*" element={<NoMatch />} />
               </Routes>
+              <Login/>
           </Suspense>
       </Router>
   );

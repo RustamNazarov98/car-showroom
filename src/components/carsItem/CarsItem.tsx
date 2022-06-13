@@ -1,18 +1,18 @@
-import styles from './CardItem.module.scss';
+import styles from './CarsItem.module.scss';
 import {Link} from "react-router-dom";
-import {Item} from "./CardItem.props";
+import {ICar} from "../../models/ICar";
 
 const CarsItem = ({
-                      title,
+                      name,
                       description,
                       id,
-                      year,
+                      year='2022',
                       mileage,
                       price,
-                      production,
-                      preview,
-                      code
-                  }:Item) => {
+                      production='Japan',
+                      image,
+                      code='JPN'
+                  }:ICar) => {
     const {
         cars_item,
         image_wrapper,
@@ -23,11 +23,11 @@ const CarsItem = ({
         <Link to={`/cars/${id}`}>
             <div className={cars_item}>
                 <div className={image_wrapper}>
-                    <img src={preview} alt={title}/>
+                    <img src={image} alt={name}/>
                 </div>
-                <h3>{title}</h3>
+                <h3>{name}</h3>
                 <p className={city}>{production}</p>
-                <p>{year} - {mileage} km</p>
+                <p>{year} - {price} km</p>
                 <p>{price},000 <span>{code}</span></p>
             </div>
         </Link>

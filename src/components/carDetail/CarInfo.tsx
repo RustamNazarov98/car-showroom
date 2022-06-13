@@ -9,8 +9,10 @@ import Paint from '../../assets/images/paint-icon.svg';
 import Door from '../../assets/images/door-icon.svg';
 import V from '../../assets/images/V-icon.svg';
 import Trans from '../../assets/images/transmission-icon.svg';
+import {ICar} from "../../models/ICar";
 
-const CarInfo = () => {
+const CarInfo = (car: ICar) => {
+    console.log(car)
     const {
         car_info,
         car_info_title,
@@ -84,10 +86,10 @@ const CarInfo = () => {
         <div className={car_info}>
             <div className={car_info_title}>
                 <p className={top_text}>ОПУБЛИКОВАНО 2 ДНЯ НАЗАД</p>
-                <p className={main_text}>NISSAN X TRAIL</p>
+                <p className={main_text}>{car.name}</p>
                 <p className={bottom_text}>2022-39,488 km</p>
             </div>
-            <p className={car_info_price}>48,000 <span>AED</span></p>
+            <p className={car_info_price}>{car.price},000 <span>AED</span></p>
             <div className={car_info_options}>
                 {dataParams.map((item,index) => (
                     <div className={option} key={index}>
@@ -111,7 +113,7 @@ const CarInfo = () => {
             <div className={car_info_description}>
                 <span>Описание</span>
                 <p>
-                    Nissan X-Trail- это пятиместный кроссовер. Его габаритные размеры составляют: длина 4643 мм, ширина 1820 мм, высота 1695 мм, колесная база 2706 мм, а величина дорожного просвета равняется 210 миллиметрам. Это солидный клиренс, благодаря которому автомобиль не сядет на брюхо при движении по глубокой колее, сможет штурмовать бордюры во время парковки и сохранит приемлемую плавность хода на разбитых дорогах с твердым покрытием.
+                    {car.description}
                 </p>
             </div>
         </div>

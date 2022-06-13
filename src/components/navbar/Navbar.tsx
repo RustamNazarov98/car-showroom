@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './Navbar.module.scss';
 import {NavigationLink} from "./NavigationLink";
+import {useActions} from "../../hooks/useActions";
+import {UseTypedSelector} from "../../hooks/useTypedSelector";
 
 const Navbar = () => {
     const {
@@ -29,13 +31,10 @@ const Navbar = () => {
             text: 'Услуги',
             link: '/services',
             active: false,
-        },
-        {
-            text: 'Мои публикации',
-            link: '/publication/my',
-            active: false,
         }
     ]
+
+    const {login} = UseTypedSelector(state => state.login);
 
     return (
         <nav className={navbar}>
@@ -51,6 +50,13 @@ const Navbar = () => {
                         </div>
                     ))
                 }
+                {login
+                &&
+                <NavigationLink
+                    text='Мои публикации'
+                    link='/publication/my'
+                    active={false}
+                />}
             </div>
         </nav>
     );
